@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Android Test</string>
+    <string name="tab_photos">Photos</string>
+    <string name="tab_users">Users</string>
+    <string name="dummy_text">Texts</string>
+    <string name="location_icon">Location_Icon</string>
+    <string name="company_icon">Company Icon</string>
+    <string name="phone_icon">Phone Icon</string>
+    <string name="text_retry">Retry</string>
+    <string name="title_activity_map">Map</string>
+    <string name="location">Search location</string>
+
+</resources>
