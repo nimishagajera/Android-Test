@@ -4,7 +4,9 @@ import com.app.test.model.Photo
 import com.app.test.model.User
 import retrofit2.Response
 import retrofit2.http.GET
-
+/**
+ * Service to fetch track data from end point [APP_API_URL].
+ */
 interface APIService {
 
     @GET("/photos")

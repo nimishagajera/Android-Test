@@ -6,7 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.viewbinding.ViewBinding
 
 /**
- * Abstract Activity which binds [ViewModel] [VM] and [ViewBinding] [VB]
+ * Abstract Activity which binds [ViewBinding] [VB]
  * Added this class for future use in-case need of adding more classes
  */
 abstract class BaseActivity<VB: ViewBinding>: AppCompatActivity() {
