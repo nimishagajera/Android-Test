@@ -13,22 +13,21 @@ import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 @ExperimentalCoroutinesApi
-class UserViewModel @ViewModelInject constructor(private val dataRepository: DataRepository):
-    ViewModel(){
+class UserViewModel @ViewModelInject constructor(private val dataRepository: DataRepository) :
+    ViewModel() {
 
     private val _userLiveData = MutableLiveData<State<List<User>>>()
 
     val userLiveData: LiveData<State<List<User>>>
         get() = _userLiveData
 
-    fun getUsers(){
+    fun getUsers() {
         viewModelScope.launch {
             dataRepository.getAllUsers().collect {
                 _userLiveData.value = it
             }
         }
     }
-
 
 
 }

@@ -38,5 +38,6 @@ class LocationActivity : BaseActivity<ActivityLocationBinding>() {
         })
     }
 
-    override fun getViewBinding(): ActivityLocationBinding = ActivityLocationBinding.inflate(layoutInflater)
+    override fun getViewBinding(): ActivityLocationBinding =
+        ActivityLocationBinding.inflate(layoutInflater)
 }

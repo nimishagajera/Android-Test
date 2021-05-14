@@ -1,7 +1,6 @@
 package com.app.test.ui.user.map
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -22,7 +21,8 @@ class MapsFragment : BaseFragment<FragmentMapsBinding>(), OnMapReadyCallback {
     private var long = 0.0
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?): View? {
+        savedInstanceState: Bundle?
+    ): View? {
         mViewBinding = FragmentMapsBinding.inflate(inflater, container, false)
 
         lat = arguments?.getString("latitude").toString().toDouble()

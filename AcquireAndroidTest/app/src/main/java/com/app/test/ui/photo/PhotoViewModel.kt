@@ -13,15 +13,15 @@ import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 @ExperimentalCoroutinesApi
-class PhotoViewModel @ViewModelInject constructor(private val dataRepository: DataRepository):
-    ViewModel(){
+class PhotoViewModel @ViewModelInject constructor(private val dataRepository: DataRepository) :
+    ViewModel() {
 
     private val _photoLiveData = MutableLiveData<State<List<Photo>>>()
 
     val photoLiveData: LiveData<State<List<Photo>>>
         get() = _photoLiveData
 
-    fun getPhotos(){
+    fun getPhotos() {
         viewModelScope.launch {
             dataRepository.getAllImages().collect {
                 _photoLiveData.value = it

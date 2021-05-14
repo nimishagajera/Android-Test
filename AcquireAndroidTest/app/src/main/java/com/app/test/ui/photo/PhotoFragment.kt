@@ -22,8 +22,10 @@ class PhotosFragment : BaseFragment<FragmentPhotoBinding>() {
 
     private val photoViewModel by viewModels<PhotoViewModel>()
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState:
-    Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState:
+        Bundle?
+    ): View? {
 
         mViewBinding = FragmentPhotoBinding.inflate(inflater, container, false)
         photoAdapter = PhotoAdapter()
@@ -71,7 +73,7 @@ class PhotosFragment : BaseFragment<FragmentPhotoBinding>() {
      * Shows [ProgressBar] for waiting while API is performing
      */
     private fun showLoading(isLoading: Boolean) {
-        when(isLoading) {
+        when (isLoading) {
             true -> {
                 mViewBinding.progressBar.visibility = View.VISIBLE
                 mViewBinding.textRetry.visibility = View.GONE
@@ -84,7 +86,7 @@ class PhotosFragment : BaseFragment<FragmentPhotoBinding>() {
     private fun showError(error: String) {
         mViewBinding.textRetry.visibility = View.VISIBLE
         Snackbar.make(mViewBinding.root, error, Snackbar.LENGTH_LONG)
-            .setAction(R.string.text_retry){
+            .setAction(R.string.text_retry) {
                 getPhotos()
             }
             .show()

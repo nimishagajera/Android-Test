@@ -22,8 +22,8 @@ android {
         getByName("release") {
             isMinifyEnabled = false
             proguardFiles(
-                    getDefaultProguardFile("proguard-android-optimize.txt"),
-                    "proguard-rules.pro"
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
             )
         }
     }
@@ -52,47 +52,46 @@ tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
 
 dependencies {
 
-    implementation("org.jetbrains.kotlin:kotlin-stdlib:1.4.31")
-    implementation("androidx.core:core-ktx:1.3.2")
-    implementation("androidx.appcompat:appcompat:1.2.0")
-    implementation("com.google.android.material:material:1.3.0")
-    implementation("androidx.constraintlayout:constraintlayout:2.0.4")
-    implementation("androidx.fragment:fragment-ktx:1.3.2")
-    implementation("com.google.android.gms:play-services-places:17.0.0")
-    implementation("com.google.android.libraries.places:places:1.1.0")
-    implementation("com.android.volley:volley:1.1.0")
+    // Android
+    implementation(com.app.test.build.Dependencies.kotlin)
+    implementation(com.app.test.build.Android.coreKtx)
+    implementation(com.app.test.build.Android.appcompat)
+    implementation(com.app.test.build.Android.fragmentKtx)
+    implementation(com.app.test.build.Android.navigationFragment)
+    implementation(com.app.test.build.Android.navigationUIKtx)
+
+    // Design
+    implementation(com.app.test.build.Dependencies.materialDesign)
+    implementation(com.app.test.build.Android.constraintLayout)
+
+    //Google places
+    implementation(com.app.test.build.Google.map)
+    implementation(com.app.test.build.Google.places)
+    implementation(com.app.test.build.Google.libPlace)
 
     // Architecture Components
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0")
-    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.2.0")
+    implementation(com.app.test.build.Lifecycle.viewModel)
+    implementation(com.app.test.build.Lifecycle.liveData)
 
     // Coroutines
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.5")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.5")
+    implementation(com.app.test.build.Coroutines.core)
+    implementation(com.app.test.build.Coroutines.android)
 
     // Retrofit
-    implementation("com.squareup.retrofit2:retrofit:2.8.1")
-    implementation("com.squareup.retrofit2:converter-moshi:2.7.2")
+    implementation(com.app.test.build.Retrofit.retrofit)
+    implementation(com.app.test.build.Retrofit.moshiRetrofitConverter)
 
     // Moshi
-    implementation("com.squareup.moshi:moshi-kotlin:1.9.2")
-    implementation("com.squareup.moshi:moshi-kotlin-codegen:1.9.2")
-    implementation("androidx.legacy:legacy-support-v4:1.0.0")
-    implementation("com.google.android.gms:play-services-maps:17.0.0")
-    implementation("androidx.navigation:navigation-fragment-ktx:2.3.0")
-    implementation("androidx.navigation:navigation-ui-ktx:2.3.0")
-    kapt("com.squareup.moshi:moshi-kotlin-codegen:1.9.2")
+    implementation(com.app.test.build.Moshi.moshi)
+    implementation(com.app.test.build.Moshi.codeGen)
+    kapt(com.app.test.build.Moshi.codeGen)
 
     // Hilt + Dagger
-    implementation("com.google.dagger:hilt-android:2.28-alpha")
-    implementation("androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha01")
-    kapt("com.google.dagger:hilt-android-compiler:2.28-alpha")
-    kapt("androidx.hilt:hilt-compiler:1.0.0-alpha01")
+    implementation(com.app.test.build.Hilt.hiltAndroid)
+    implementation(com.app.test.build.Hilt.hiltViewModel)
+    kapt(com.app.test.build.Hilt.daggerCompiler)
+    kapt(com.app.test.build.Hilt.hiltCompiler)
 
     // Coil-kt
-    implementation("io.coil-kt:coil:0.9.5")
-
-    testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.1.2")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.3.0")
+    implementation(com.app.test.build.Dependencies.coil)
 }

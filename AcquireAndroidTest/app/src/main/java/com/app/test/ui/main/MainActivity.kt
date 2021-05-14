@@ -2,7 +2,6 @@ package com.app.test.ui.main
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager2.widget.ViewPager2
 import com.app.test.R
 import com.app.test.databinding.ActivityMainBinding
@@ -43,5 +42,6 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
             tab.text = TAB_TITLES[position]
         }.attach()
     }
+
     override fun getViewBinding(): ActivityMainBinding = ActivityMainBinding.inflate(layoutInflater)
 }

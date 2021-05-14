@@ -6,7 +6,7 @@ import kotlinx.coroutines.ExperimentalCoroutinesApi
 
 @ExperimentalCoroutinesApi
 @HiltAndroidApp
-class TestApp: Application() {
+class TestApp : Application() {
 
     override fun onCreate() {
         super.onCreate()

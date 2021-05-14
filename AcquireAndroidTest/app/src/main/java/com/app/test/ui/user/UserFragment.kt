@@ -9,12 +9,10 @@ import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.app.test.R
 import com.app.test.databinding.FragmentUserBinding
-import com.app.test.inTransaction
 import com.app.test.model.State
 import com.app.test.model.User
 import com.app.test.ui.base.BaseFragment
 import com.app.test.ui.user.map.MapActivity
-import com.app.test.ui.user.map.MapsFragment
 import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -23,13 +21,14 @@ import kotlinx.coroutines.ExperimentalCoroutinesApi
 @AndroidEntryPoint
 class UserFragment : BaseFragment<FragmentUserBinding>() {
 
-    private val userAdapter =  UserAdapter(this::onItemClicked)
+    private val userAdapter = UserAdapter(this::onItemClicked)
 
     private val userViewModel by viewModels<UserViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?): View? {
+        savedInstanceState: Bundle?
+    ): View? {
 
         mViewBinding = FragmentUserBinding.inflate(inflater, container, false)
 
@@ -84,7 +83,7 @@ class UserFragment : BaseFragment<FragmentUserBinding>() {
      * Shows [ProgressBar] for waiting while API is performing
      */
     private fun showLoading(isLoading: Boolean) {
-        when(isLoading) {
+        when (isLoading) {
             true -> {
                 mViewBinding.progressBar.visibility = View.VISIBLE
                 mViewBinding.textRetry.visibility = View.GONE
@@ -97,7 +96,7 @@ class UserFragment : BaseFragment<FragmentUserBinding>() {
     private fun showError(error: String) {
         mViewBinding.textRetry.visibility = View.VISIBLE
         Snackbar.make(mViewBinding.root, error, Snackbar.LENGTH_LONG)
-            .setAction(R.string.text_retry){
+            .setAction(R.string.text_retry) {
                 getUsers()
             }
             .show()

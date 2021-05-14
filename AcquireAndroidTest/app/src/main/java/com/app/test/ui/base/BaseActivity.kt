@@ -2,14 +2,13 @@ package com.app.test.ui.base
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.ViewModel
 import androidx.viewbinding.ViewBinding
 
 /**
  * Abstract Activity which binds [ViewBinding] [VB]
  * Added this class for future use in-case need of adding more classes
  */
-abstract class BaseActivity<VB: ViewBinding>: AppCompatActivity() {
+abstract class BaseActivity<VB : ViewBinding> : AppCompatActivity() {
 
     protected lateinit var mViewBinding: VB
 
@@ -18,6 +17,7 @@ abstract class BaseActivity<VB: ViewBinding>: AppCompatActivity() {
 
         mViewBinding = getViewBinding()
     }
+
     /**
      * It returns [VB] which is assigned to [mViewBinding] and used in [onCreate]
      */

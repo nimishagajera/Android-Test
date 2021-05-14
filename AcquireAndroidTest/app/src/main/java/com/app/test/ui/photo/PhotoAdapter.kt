@@ -7,11 +7,13 @@ import androidx.recyclerview.widget.ListAdapter
 import com.app.test.databinding.ItemPhotoBinding
 import com.app.test.model.Photo
 
-class PhotoAdapter: ListAdapter<Photo, PhotoViewHolder>(DIFF_CALLBACK) {
+class PhotoAdapter : ListAdapter<Photo, PhotoViewHolder>(DIFF_CALLBACK) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = PhotoViewHolder(
-        ItemPhotoBinding.inflate(LayoutInflater.from(parent.context),
-        parent, false)
+        ItemPhotoBinding.inflate(
+            LayoutInflater.from(parent.context),
+            parent, false
+        )
     )
 
     override fun onBindViewHolder(holder: PhotoViewHolder, position: Int) =
